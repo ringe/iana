@@ -39,7 +39,7 @@ Once installed, you can simply call
   require 'rubygems'
   require 'iana'
 
-in any Ruby program that makes use of the IANA module.
+in any Ruby program that makes use of the IANA gem.
 
 I haven't tested this code with YARV, so YMMV. :)
 
