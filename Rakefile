@@ -13,7 +13,7 @@ spec = Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.test_files = Dir.glob('tests/*.rb')
   s.has_rdoc = true
-  s.extra_rdoc_files = ["README"]
+  s.extra_rdoc_files = ['README']
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
@@ -21,5 +21,5 @@ Rake::GemPackageTask.new(spec) do |pkg|
 end
 
 task :default => "pkg/#{spec.name}-#{spec.version}.gem" do
-  puts "generated latest version"
+  puts 'generated latest version'
 end
