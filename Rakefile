@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'rubygems'
 Gem::manage_gems
 require 'rake/gempackagetask'
@@ -17,16 +19,22 @@ spec = Gem::Specification.new do |s|
   s.extra_rdoc_files = ['README']
 end
 
-Rake::GemPackageTask.new(spec) do |pkg|
-  pkg.need_tar = true
-end
-
-task :default => "pkg/#{spec.name}-#{spec.version}.gem" do
-  puts 'generated latest version'
-end
-
 Rake::TestTask.new do |t|
   t.libs << "test"
   t.test_files = FileList['test/*.rb']
   t.verbose = true
+end
+
+Rake::GemPackageTask.new(spec) do |pkg|
+  pkg.need_tar = true
+end
+
+task :default do
+  system("rake -T")
+end
+
+task :clean => :clobber_package
+
+task :gem => "pkg/#{spec.name}-#{spec.version}.gem" do
+  puts 'generated latest version'
 end
