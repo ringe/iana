@@ -7,6 +7,9 @@ domains, et al. I get my data from the Internet Assigned Numbers Authority
 this code you can add this functionality to your own programs as well.
 
 == How
+require 'rubygems'
+require 'iana'
+
 The IANA Ruby module loads the data into conveniently searchable data
 structures. The flat files the IANA Ruby module consume as data are hosted at
 iana.org. You will need to fetch them so you can process the content locally.
@@ -33,13 +36,6 @@ I added a Rakefile and a gem spec. To build the gem, just type:
 To install the gem, just type:
 
   sudo gem install pkg/IANA-0.0.4.gem
-
-Once installed, you can simply call
-
-  require 'rubygems'
-  require 'iana'
-
-in any Ruby program that makes use of the IANA gem.
 
 == Notes
 I haven't tested this code with YARV, so YMMV.
