@@ -1,6 +1,7 @@
 require 'rubygems'
 Gem::manage_gems
 require 'rake/gempackagetask'
+require 'rake/testtask'
 
 spec = Gem::Specification.new do |s|
   s.platform =   Gem::Platform::RUBY
@@ -22,4 +23,10 @@ end
 
 task :default => "pkg/#{spec.name}-#{spec.version}.gem" do
   puts 'generated latest version'
+end
+
+Rake::TestTask.new do |t|
+  t.libs << "test"
+  t.test_files = FileList['test/*.rb']
+  t.verbose = true
 end
