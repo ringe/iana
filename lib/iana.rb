@@ -20,3 +20,5 @@ $LOAD_PATH.unshift(File.dirname(__FILE__)+'/iana')
 require 'port'
 require 'protocol'
 require 'tld'
+
+raise RuntimeError, 'This library is for require only' if $0 == __FILE__
