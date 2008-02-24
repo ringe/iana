@@ -7,7 +7,7 @@ $KCODE = 'UTF8'
 require 'jcode'
 
 module IANA
-  IANA::NAME = 'IANA'
+  IANA::NAME = 'iana'
   IANA::VERSION = '0.0.4'
   IANA::COPYRIGHT = 'Copyright (c) 2008 Ramsey Dow'
   def self.copyright() IANA::COPYRIGHT end

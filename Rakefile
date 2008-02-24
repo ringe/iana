@@ -7,7 +7,7 @@ require 'rake/testtask'
 
 spec = Gem::Specification.new do |s|
   s.platform =   Gem::Platform::RUBY
-  s.name = 'IANA'
+  s.name = 'iana'
   s.version = '0.0.4'
   s.author = 'Ramsey Dow'
   s.email = 'yesmar @nospam@ speakeasy.net'

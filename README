@@ -1,5 +1,5 @@
 == What
-IANA Ruby module, version 0.0.4
+IANA Ruby module version 0.0.4
 
 I like to look stuff up, like TCP/IP port numbers, protocols, top-level
 domains, et al. I get my data from the Internet Assigned Numbers Authority
@@ -35,7 +35,7 @@ I added a Rakefile and a gem spec. To build the gem, just type:
 
 To install the gem, just type:
 
-  sudo gem install pkg/IANA-0.0.4.gem
+  sudo gem install pkg/iana-0.0.4.gem
 
 == Notes
 I haven't tested this code with YARV, so YMMV.
