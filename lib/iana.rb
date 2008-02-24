@@ -16,7 +16,6 @@ module IANA
 end
 
 $LOAD_PATH.unshift(File.dirname(__FILE__)+'/iana')
-puts File.dirname(__FILE__)+'/iana'
 
 require 'port'
 require 'protocol'
