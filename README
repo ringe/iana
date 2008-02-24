@@ -40,5 +40,6 @@ in any Ruby program that makes use of the IANA module.
 I haven't tested this code with YARV, so YMMV. :)
 
 == Contribute
-The source is availble at github. Feel free to clone it and implement your own
-awesome ideas. You can also send your patches by email to yesmar@speakeasy.net.
+The source is availble at github: http://github.com/yesmar/iana/. Feel free to
+clone it and implement your own awesome ideas. You can also send your patches
+by email to yesmar[at]speakeasy[dot]net.
