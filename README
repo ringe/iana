@@ -1,4 +1,6 @@
 == What
+IANA Ruby module, version 0.0.2
+
 I like to look stuff up, like TCP/IP port numbers, protocols, top-level
 domains, et al. I get my data from the Internet Assigned Numbers Authority
 (IANA) and like to make it available to my programs. Since I am open sourcing
@@ -24,12 +26,13 @@ Use these example programs to see how you might use and otherwise integrate
 IANA data functionality into your own programs.
 
 == Install
-This needs to be packaged up as a gem, and I will get around to it in the next
-version, but in the mean time we do it the no frills way. Assuming Ruby 1.8,
-try this:
+I added a Rakefile and a gem spec. To build the gem, just type:
 
-  sudo cp lib/iana.rb /opt/local/lib/ruby/site_ruby/1.8
-  sudo cp -R lib/iana /opt/local/lib/ruby/site_ruby/1.8
+  rake
+
+To install the gem, just type:
+
+  sudo gem install pkg/IANA-0.0.2.gem
 
 Once installed, you can simply call
 
