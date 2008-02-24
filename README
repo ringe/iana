@@ -1,5 +1,5 @@
 == What
-IANA Ruby module, version 0.0.2
+IANA Ruby module, version 0.0.3
 
 I like to look stuff up, like TCP/IP port numbers, protocols, top-level
 domains, et al. I get my data from the Internet Assigned Numbers Authority
@@ -36,6 +36,7 @@ To install the gem, just type:
 
 Once installed, you can simply call
 
+  require 'rubygems'
   require 'iana'
 
 in any Ruby program that makes use of the IANA module.
