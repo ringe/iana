@@ -12,7 +12,7 @@ spec = Gem::Specification.new do |s|
   s.summary = 'Ruby module which process flat files from IANA'
   s.files = FileList['lib/*.rb', 'lib/iana/*.rb', 'test/*'].to_a
   s.require_path = 'lib'
-  s.test_files = Dir.glob('tests/*.rb')
+  s.test_files = Dir.glob('test/*.rb')
   s.has_rdoc = true
   s.extra_rdoc_files = ['README']
 end
