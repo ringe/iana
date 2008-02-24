@@ -28,7 +28,7 @@ IANA data functionality into your own programs.
 == Install
 I added a Rakefile and a gem spec. To build the gem, just type:
 
-  rake
+  rake gem
 
 To install the gem, just type:
 
