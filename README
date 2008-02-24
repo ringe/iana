@@ -32,7 +32,7 @@ I added a Rakefile and a gem spec. To build the gem, just type:
 
 To install the gem, just type:
 
-  sudo gem install pkg/IANA-0.0.2.gem
+  sudo gem install pkg/IANA-0.0.4.gem
 
 Once installed, you can simply call
 
@@ -44,6 +44,6 @@ in any Ruby program that makes use of the IANA module.
 I haven't tested this code with YARV, so YMMV. :)
 
 == Contribute
-The source is availble at github: http://github.com/yesmar/iana/. Feel free to
-clone it and implement your own awesome ideas. You can also send your patches
-by email to yesmar[at]speakeasy[dot]net.
+The source is availble at github: git://github.com/yesmar/iana.git. Feel free
+to clone it and implement your own awesome ideas. You can also send your
+patches by email to yesmar[at]speakeasy[dot]net.
