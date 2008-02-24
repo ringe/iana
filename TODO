@@ -1,0 +1,9 @@
+IANA TODO
+Sat Feb 23 17:43:29 PST 2008
+
+- bad developer, no unit tests
+- better error checking for incorrect files
+- make lookup more flexible
+- add IANA ethernet-numbers support
+- project wants a Rakefile with gem building support
+- consider adding support for other IANA files

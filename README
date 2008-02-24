@@ -1,0 +1,44 @@
+== What
+I like to look stuff up, like TCP/IP port numbers, protocols, top-level
+domains, et al. I get my data from the Internet Assigned Numbers Authority
+(IANA) and like to make it available to my programs. Since I am open sourcing
+this code you can add this functionality to your own programs as well.
+
+== How
+The IANA Ruby module loads the data into conveniently searchable data
+structures. The flat files the IANA Ruby module consume as data are hosted at
+iana.org. You will need to fetch them so you can process the content locally.
+I grab these files with with curl (but you can use wget or whatever if you
+don't use curl):
+
+curl -O http://www.iana.org/assignments/port-numbers
+curl -O http://www.iana.org/assignments/protocol-numbers
+curl -O http://data.iana.org/TLD/tlds-alpha-by-domain.txt
+
+== Examples
+When you run the example programs, do it like so:
+
+  ruby examples/ports.rb port-numbers
+
+Use these example programs to see how you might use and otherwise integrate
+IANA data functionality into your own programs.
+
+== Install
+This needs to be packaged up as a gem, and I will get around to it in the next
+version, but in the mean time we do it the no frills way. Assuming Ruby 1.8,
+try this:
+
+  sudo cp lib/iana.rb /opt/local/lib/ruby/site_ruby/1.8
+  sudo cp -R lib/iana /opt/local/lib/ruby/site_ruby/1.8
+
+Once installed, you can simply call
+
+  require 'iana'
+
+in any Ruby program that makes use of the IANA module.
+
+I haven't tested this code with YARV, so YMMV. :)
+
+== Contribute
+The source is availble at github. Feel free to clone it and implement your own
+awesome ideas. You can also send your patches by email to yesmar@speakeasy.net.
