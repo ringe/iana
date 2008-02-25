@@ -21,4 +21,8 @@ require 'port'
 require 'protocol'
 require 'tld'
 
+# TODO: bad developer, no unit tests
+# TODO: lookup needs to be more flexible
+# TODO: add IANA ethernet-numbers support
+
 raise RuntimeError, 'This library is for require only' if $0 == __FILE__

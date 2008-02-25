@@ -14,6 +14,8 @@ module IANA
       raise ArgumentError, 'invalid pathname class' if pathname.class != String
       raise ArgumentError, 'empty pathname' if pathname.empty?
 
+      # TODO: better error checking for files with incorrect content
+
       protocols = {}
       updated = nil
 
