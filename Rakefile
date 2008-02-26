@@ -13,6 +13,7 @@ spec = Gem::Specification.new do |s|
   s.email = 'yesmar @nospam@ speakeasy.net'
   s.summary = 'Ruby module which process flat files from IANA'
   s.rubyforge_project = 'http://rubyforge.org/projects/iana/'
+  s.homepage = 'http://iana.rubyforge.org/'
   s.files = FileList['lib/*.rb', 'lib/iana/*.rb', 'test/*', 'examples/*'].to_a
   s.require_path = 'lib'
   s.test_files = Dir.glob('test/*.rb')
