@@ -1,5 +1,5 @@
 == What
-IANA Ruby module version 0.0.4
+IANA Ruby module version 0.0.5
 
 I like to look stuff up, like TCP/IP port numbers, protocols, top-level
 domains, et al. I get my data from the Internet Assigned Numbers Authority
@@ -35,10 +35,23 @@ I added a Rakefile and a gem spec. To build the gem, just type:
 
 To install the gem, just type:
 
-  sudo gem install pkg/iana-0.0.4.gem
+  sudo gem install pkg/iana-0.0.5.gem
 
 == Notes
-I haven't tested this code with YARV, so YMMV.
+I have stared updating this code for use with YARV. Currently I am testing
+with Ruby 1.9.1 RC1. The ports and tld code seems to be working as expected.
+The protocols code is broken, however.
+
+Things to do:
+- fix lib/iana/protocols.rb
+- test gem with Ruby 1.9.1 RC1
+- update gem hosted at RubyForge
+- update to Ruby 1.9.1 RC2 and continue testing
+
+I'll get these things addressed shortly.
+
+Going forward, I want to add support for IANA's Ether Types flatfile:
+http://www.iana.org/assignments/ethernet-numbers
 
 == Contribute
 The source is availble at github: git://github.com/yesmar/iana.git. Feel free
