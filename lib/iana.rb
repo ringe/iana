@@ -5,7 +5,7 @@
 
 module IANA
   IANA::NAME = 'iana'
-  IANA::VERSION = '0.0.6'
+  IANA::VERSION = '0.0.7'
   IANA::COPYRIGHT = 'Copyright (c) 2008, 2009 Ramsey Dow'
   def self.copyright() IANA::COPYRIGHT end
   def self.version() IANA::VERSION end
