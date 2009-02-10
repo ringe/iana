@@ -8,7 +8,9 @@ Gem::Specification.new do |s|
   s.date = %q{2009-02-09}
   s.description = %q{Ruby library which process flat files from IANA.}
   s.email = %q{yesmar@speakeasy.net}
-  s.files = FileList['lib/*.rb', 'lib/iana/*.rb', 'test/*', 'examples/*'].to_a
+  s.files = ['lib/iana.rb', 'lib/iana/port.rb', 'lib/iana/protocol.rb',
+    'lib/iana/tld.rb', 'examples/ports.rb', 'examples/protocols.rb',
+     'examples/tlds.rb']
   s.has_rdoc = true
   s.homepage = %q{http://github.com/yesmar/iana}
   s.rdoc_options = ["--inline-source", "--charset=UTF-8"]
