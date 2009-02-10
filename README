@@ -20,14 +20,6 @@ curl -O http://www.iana.org/assignments/port-numbers
 curl -O http://www.iana.org/assignments/protocol-numbers
 curl -O http://data.iana.org/TLD/tlds-alpha-by-domain.txt
 
-== Examples
-When you run the example programs, do it like so:
-
-  ruby examples/ports.rb port-numbers
-
-Use these example programs to see how you might use and otherwise integrate
-IANA data functionality into your own programs.
-
 == Install
 Installation is super easy!
 
@@ -36,6 +28,14 @@ Installation is super easy!
 
 That's it. See the programs in the examples directory to see how to use the
 IANA gem.
+
+== Examples
+When you run the example programs, do it like so:
+
+  ruby examples/ports.rb port-numbers
+
+Use these example programs to see how you might use and otherwise integrate
+IANA data functionality into your own programs.
 
 == Notes
 I have stared updating this code for use with YARV. Currently I am developing
