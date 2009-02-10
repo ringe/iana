@@ -4,3 +4,5 @@ v0.0.1 - initial release
 v0.0.2 - Rakefile & gem building support
 v0.0.3 - first bugfix release
 v0.0.4 - second bugfix release
+v0.0.5 - updated for YARV
+v0.0.6 - updated to use github for gem

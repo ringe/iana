@@ -1,5 +1,5 @@
 == What
-IANA Ruby module version 0.0.5
+IANA Ruby module version 0.0.6
 
 I like to look stuff up, like TCP/IP port numbers, protocols, top-level
 domains, et al. I get my data from the Internet Assigned Numbers Authority
@@ -29,24 +29,19 @@ Use these example programs to see how you might use and otherwise integrate
 IANA data functionality into your own programs.
 
 == Install
-I added a Rakefile and a gem spec. To build the gem, just type:
-
-  rake gem
-
-To install the gem, just type:
-
-  sudo gem install pkg/iana-0.0.5.gem
+I've removed the gem machinery from the Rakefile and am now using github to
+generate/distribute the gem. I'll update this section once I do some additional
+testing.
 
 == Notes
-I have stared updating this code for use with YARV. Currently I am testing
-with Ruby 1.9.1 RC1. The ports and tld code seems to be working as expected.
+I have stared updating this code for use with YARV. Currently I am developing
+with Ruby 1.9.1-p0. The ports and tld code seems to be working as expected.
 The protocols code is broken, however.
 
 Things to do:
 - fix lib/iana/protocols.rb
-- test gem with Ruby 1.9.1 RC1
-- update gem hosted at RubyForge
-- update to Ruby 1.9.1 RC2 and continue testing
+- test gem with Ruby 1.9.1-p0
+- delete RubyForge project (we're living exclusively at github now)
 
 I'll get these things addressed shortly.
 
