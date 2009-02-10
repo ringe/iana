@@ -52,7 +52,7 @@
       Ruby gem which process flat files from IANA
     </div>
 
-    <p>I like to look stuff up, like TCP/IP port numbers, protocols, top-level domains, <i>et al</i>. I get my data from the Internet Assigned Numbers Authority (IANA) and like to make it available to my programs. This data is a lot more up-to-date than that found in <code>/etc/services</code>. Since I prefer all network-aware tools to use the most current data, I am making this code available under the MIT License. Feel free to add this functionality to your own Ruby programs. Here's how:</p>
+    <p>I like to look stuff up, like TCP/IP port numbers, protocols, top-level domains, <i>et al</i>. I get my data from the Internet Assigned Numbers Authority (IANA) and like to make it available to my programs. This data is a lot more up-to-date than that found in <code>/etc/services</code>. Since I prefer all network-aware tools to use the most current data, I am making this code available under the terms of the MIT License. Feel free to add this functionality to your own Ruby programs. Here's how:</p>
 
 <pre>
 require 'iana'
@@ -71,7 +71,7 @@ It's that easy! See all the sample programs in the <code>examples</code> directo
 <h2>Dependencies</h2>
 
 <p>
-This ruby gem loads data from IANA into conveniently searchable data structures. The flat files the IANA Ruby gem consumes as data are hosted at <a href="http://www.iana.org/">iana.org</a>. You will need to fetch them so you can process the content locally. I typically grab these files with with <a href="http://curl.haxx.se/">curl</a> (but you can use <a href="http://www.gnu.org/software/wget/"wget</a> or whatever if you don't use curl):
+This ruby gem loads data from IANA into conveniently searchable data structures. The flat files the IANA Ruby gem consumes as data are hosted at <a href="http://www.iana.org/">iana.org</a>. You will need to fetch them so you can process the content locally. I typically grab these files with with <a href="http://curl.haxx.se/">curl</a> (but you can use <a href="http://www.gnu.org/software/wget/">wget</a> or whatever if you don't use curl):
 </p>
 
 <pre>
