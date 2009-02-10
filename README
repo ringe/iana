@@ -29,9 +29,13 @@ Use these example programs to see how you might use and otherwise integrate
 IANA data functionality into your own programs.
 
 == Install
-I've removed the gem machinery from the Rakefile and am now using github to
-generate/distribute the gem. I'll update this section once I do some additional
-testing.
+Installation is super easy!
+
+  gem sources -a http://gems.github.com (you only have to do this once)
+  sudo gem install yesmar-iana
+
+That's it. See the programs in the examples directory to see how to use the
+IANA gem.
 
 == Notes
 I have stared updating this code for use with YARV. Currently I am developing
