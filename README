@@ -8,7 +8,6 @@ domains, et al. I get my data from the Internet Assigned Numbers Authority
 this code you can add this functionality to your own programs as well.
 
 == How
-require 'rubygems'
 require 'iana'
 
 The IANA Ruby module loads the data into conveniently searchable data
