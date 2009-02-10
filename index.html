@@ -52,14 +52,58 @@
       Ruby gem which process flat files from IANA
     </div>
 
-    <p>I like to look stuff up, like TCP/IP port numbers, protocols, top-level domains, et al. I get my data from the Internet Assigned Numbers Authority (IANA) and like to make it available to my programs. Since I am open sourcing this code you can add this functionality to your own programs as well.</p><h2>Dependencies</h2>
-<p>No dependencies (other than raw data from IANA, of course).</p>
+    <p>I like to look stuff up, like TCP/IP port numbers, protocols, top-level domains, et al. I get my data from the Internet Assigned Numbers Authority (IANA) and like to make it available to my programs. Since I am open sourcing this code you can add this functionality to your own programs as well.</p>
+
+<h2>Dependencies</h2>
+
+<p>
+This ruby gem loads data from IANA into conveniently searchable data structures. The flat files the IANA Ruby gem consumes as data are hosted at <a href="http://www.iana.org/">iana.org</a>. You will need to fetch them so you can process the content locally. I typically grab these files with with <a href="http://curl.haxx.se/">curl</a> (but you can use <a href="http://www.gnu.org/software/wget/"wget</a> or whatever if you don't use curl):
+</p>
+
+<pre>
+curl -O http://www.iana.org/assignments/port-numbers<br/>
+curl -O http://www.iana.org/assignments/protocol-numbers<br/>
+curl -O http://data.iana.org/TLD/tlds-alpha-by-domain.txt<br/>
+</pre>
+
 <h2>License</h2>
-<p>MIT License</p>
-<h2>Authors</h2>
-<p>Ramsey Dow (yesmar@speakeasy.net)<br/><br/>      </p>
+
+<p>
+MIT License
+</p>
+
+<p>
+Copyright (c) 2008, 2009 Ramsey Dow
+</p>
+
+<p>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+</p>
+
+<p>
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+</p>
+
+<p>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</p>
+
+<h2>Author</h2>
+<p>Ramsey Dow (yesmar@speakeasy.net)</p>
 <h2>Contact</h2>
-<p> (yesmar@speakeasy.net)<br/>      </p>
+<p>&lt;yesmar@speakeasy.net&gt;</p>
 
 
     <h2>Download</h2>
