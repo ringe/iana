@@ -52,7 +52,21 @@
       Ruby gem which process flat files from IANA
     </div>
 
-    <p>I like to look stuff up, like TCP/IP port numbers, protocols, top-level domains, et al. I get my data from the Internet Assigned Numbers Authority (IANA) and like to make it available to my programs. Since I am open sourcing this code you can add this functionality to your own programs as well.</p>
+    <p>I like to look stuff up, like TCP/IP port numbers, protocols, top-level domains, <i>et al</i>. I get my data from the Internet Assigned Numbers Authority (IANA) and like to make it available to my programs. This data is a lot more up-to-date than that found in <code>/etc/services</code>. Since I prefer all network-aware tools to use the most current data, I am making this code available under the MIT License. Feel free to add this functionality to your own Ruby programs. Here's how:</p>
+
+<pre>
+require 'iana'
+IANA_PORT, IANA_PORT_UPDATED = IANA::Port::load('port-numbers')
+# lookup port 22
+port = 22
+result = IANA_PORT[port]
+puts "#{result.size} matches for port #{port}:"
+result.each { |p| puts "=> #{p.keyword} #{port}/#{p.protocol} \"#{p.description}\"" }
+</pre>
+
+<p>
+It's that easy! See all the sample programs in the <code>examples</code> directory to see how to use the rest of the features of the IANA gem.
+</p>
 
 <h2>Dependencies</h2>
 
