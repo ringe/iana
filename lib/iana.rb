@@ -17,6 +17,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__)+'/iana')
 require 'port'
 require 'protocol'
 require 'tld'
+require 'lsr'
 
 # TODO: bad developer, no unit tests
 # TODO: lookup needs to be more flexible
