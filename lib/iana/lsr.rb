@@ -26,7 +26,9 @@ module IANA
      "Suppress-Script",
      "Prefix",
      "Comments" ]
-
+    IANAHost = 'www.iana.org'
+    IANAPath = '/assignments/language-subtag-registry'
+    IANAFile = File.dirname(__FILE__) + "/../../example-data/lsr.txt"
     @@tags      = [] 
     @@file_date = ""
 
@@ -39,16 +41,15 @@ module IANA
     end
 
     # Load data directly from IANA site
-    def self.get
+    def self.get(path=IANAPath, host=IANAHost)
       require 'net/http'
-      site = Net::HTTP.new('www.iana.org', 80)
-      response = site.request_get('/assignments/language-subtag-registry')
-      text = response.body
-      self.load(text)
+      site = Net::HTTP.new host
+      response = site.request_get path
+      self.load(response.body)
     end
 
     # Load data from a text file
-    def self.open(filename)
+    def self.open(filename=IANAFile)
       file = File.open(filename, 'r')
       self.load(file.read)
     end

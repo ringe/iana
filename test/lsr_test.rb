@@ -20,6 +20,8 @@ class TestLanguageSubtagRegistry < Test::Unit::TestCase
   def test_a_open
     assert_nothing_raised { @LSR::open(Datafile) }
     test_loaded
+    assert_nothing_raised { @LSR::open }
+    test_loaded
   end
 
   def test_b_get
@@ -28,7 +30,6 @@ class TestLanguageSubtagRegistry < Test::Unit::TestCase
   end
 
   def test_c_dump
-    #@LSR::open(Datafile)
     text = ""
     assert_nothing_raised { text = @LSR::dump }
     test_dump_format(text)
@@ -40,6 +41,10 @@ class TestLanguageSubtagRegistry < Test::Unit::TestCase
     test_dump_format(text, Hash)
     assert_raise(ArgumentError) { text = @LSR::dump('abcd') }
     assert_raise(ArgumentError) { text = @LSR::dump(5) }
+  end
+
+  def test_d_redo
+    # TODO: test loading from a dump; verify same data
   end
 
   ################################################
