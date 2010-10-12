@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # tld.rb
-# yesmar@speakeasy.net
+# yesmar@gmail.com
 
 module IANA
   module TLD

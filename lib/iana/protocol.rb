@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # protocol.rb
-# yesmar@speakeasy.net
+# yesmar@gmail.com
 
 module IANA
   module Protocol

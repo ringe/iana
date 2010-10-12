@@ -1,5 +1,5 @@
 == What
-IANA Ruby module version 0.0.7
+IANA Ruby module version 0.0.8
 http://yesmar.github.com/iana/
 
 I like to look stuff up, like TCP/IP port numbers, protocols, top-level
@@ -19,6 +19,7 @@ don't use curl):
 curl -O http://www.iana.org/assignments/port-numbers
 curl -O http://www.iana.org/assignments/protocol-numbers
 curl -O http://data.iana.org/TLD/tlds-alpha-by-domain.txt
+curl -O http://www.iana.org/assignments/ethernet-numbers
 
 == Install
 Installation is super easy!
@@ -38,21 +39,11 @@ Use these example programs to see how you might use and otherwise integrate
 IANA data functionality into your own programs.
 
 == Notes
-I have stared updating this code for use with YARV. Currently I am developing
-with Ruby 1.9.1-p0. The ports and tld code seems to be working as expected.
-The protocols code is broken, however.
-
-Things to do:
-- fix lib/iana/protocols.rb
-- test gem with Ruby 1.9.1-p0
-- delete RubyForge project (we're living exclusively at github now)
-
-I'll get these things addressed shortly.
-
-Going forward, I want to add support for IANA's Ether Types flatfile:
-http://www.iana.org/assignments/ethernet-numbers
+Version 1.0.0 is a planed rewrite from scratch. Most outstanding usability
+issues will be addressed in this release. I will be adding some additional
+functionality to simplify using these scripts in code generators.
 
 == Contribute
 The source is availble at github: git://github.com/yesmar/iana.git. Feel free
 to clone it and implement your own awesome ideas. You can also send your
-patches by email to yesmar[at]speakeasy[dot]net.
+patches by email to yesmar[at]gmail[dot]com.

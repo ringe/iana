@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # port.rb
-# yesmsar@speakeasy.net
+# yesmsar@gmail.com
 
 module IANA
   module Port
