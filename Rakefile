@@ -7,6 +7,7 @@
 require 'rubygems'
 require 'rake'
 require 'echoe'
+require 'yard'
 
 require 'rake/clean'
 require 'rake/testtask'
