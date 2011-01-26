@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
+# vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
-# protocol.rb
-# yesmar@gmail.com
+# lib/iana/protocol.rb
+# coding:utf-8
 
 module IANA
   module Protocol

@@ -1,4 +1,9 @@
 *.swp
 .DS_Store
+.yardoc
+cache
 data
-iana-*.gem
+doc
+Manifest
+pkg
+iana.gemspec

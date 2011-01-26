@@ -1,25 +1,50 @@
 #!/usr/bin/env ruby
+# vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
-# iana.rb
-# yesmar@gmail.com
+# lib/iana.rb
+# coding:utf-8
 
 module IANA
-  IANA::NAME = 'iana'
-  IANA::VERSION = '0.0.8'
-  IANA::COPYRIGHT = 'Copyright (c) 2008, 2009, 2010 Ramsey Dow'
-  def self.copyright() IANA::COPYRIGHT end
-  def self.version() IANA::VERSION end
-  def self.libdir() File.expand_path(__FILE__).gsub(%r/\.rb$/, '') end
-end
+  NAME = 'iana'
+  MAJOR_VERSION = 0
+  MINOR_VERSION = 0
+  PATCHLEVEL = 9
+  LIBPATH = File.expand_path(File.dirname(__FILE__)) + File::SEPARATOR
+  PATH = File.dirname(LIBPATH) + File::SEPARATOR
+  COPYRIGHT = 'Copyright 2008-2011, Ramsey Dow. All rights reserved.'
 
-$LOAD_PATH.unshift(File.dirname(__FILE__)+'/iana')
+  # Returns proper library name.
+  def self.name
+    NAME.capitalize
+  end # name
 
+  # Returns library version.
+  def self.version
+    "#{MAJOR_VERSION}.#{MINOR_VERSION}.#{PATCHLEVEL}"
+  end # version
+
+  # Returns library path, adding additional elements if supplied.
+  def self.libpath(*args)
+    args.empty? ? LIBPATH : ::File.join(LIBPATH, args.flatten)
+  end # libpath
+
+  # Returns path, adding additional elements if supplied.
+  def self.path(*args)
+    args.empty? ? PATH : ::File.join(PATH, args.flatten)
+  end # path
+end # IANA
+
+$LOAD_PATH.unshift(File.dirname(__FILE__)+"/#{IANA::NAME}")
+
+#require 'consumer'
 require 'ethertype'
 require 'port'
 require 'protocol'
 require 'tld'
 
-# TODO: bad developer, no unit tests
-# TODO: lookup needs to be more flexible
+# TODO implement consumer model
+# TODO complete documentaion
+# TODO implement unit tests
+# TODO lookup needs to be more flexible
 
 raise RuntimeError, 'This library is for require only' if $0 == __FILE__

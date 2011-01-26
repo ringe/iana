@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
+# vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
+
+# examples/protocols.rb
+# coding:utf-8
 
 require 'pathname'
 dir = Pathname.new(File.expand_path(__FILE__)).realpath

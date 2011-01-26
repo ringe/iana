@@ -1,21 +1,54 @@
 #!/usr/bin/env ruby
+# vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
+# Rakefile
+# coding:utf-8
+
+require 'rubygems'
+require 'rake'
+require 'echoe'
+
+require 'rake/clean'
 require 'rake/testtask'
 
-Rake::TestTask.new do |t|
-  t.libs << "test"
-  t.test_files = FileList['test/*.rb']
-  t.verbose = true
+CLEAN.include('cache/*', 'Manifest', 'iana.gemspec')
+CLOBBER.include('cache')
+
+Echoe.new('iana', '0.0.9') do |p|
+  p.description    = "Process flat files from IANA"
+  p.url            = "https://github.com/yesmar/iana"
+  p.author         = "Ramsey Dow"
+  p.email          = "yesmar @nospam@ gmail.com"
+  p.ignore_pattern = [".*", "cache/*", "doc/*", "pkg/*"]
+  p.development_dependencies = []
 end
 
 task :default do
   system("rake -T")
 end
 
+# override RDoc with YARD
+desc 'generate documentation'
+task :doc do
+  system("yard --doc")
+end
+
+# run test suite
+Rake::TestTask.new do |t|
+  t.libs << "test"
+  t.test_files = FileList['test/*.rb']
+  t.verbose = true
+end
+
+desc 'count source lines of code'
+task :count do
+  system('cloc lib')
+end
+
 namespace :todo do
   desc 'List TODOs in all .rb files under lib/'
   task(:list) do
-      FileList["lib/**/*.rb"].egrep(/TODO/)
+      FileList["lib/**/*.rb", "bin/**/*.rb"].egrep(/TODO/)
   end
  
   desc 'Edit all TODOs in VIM' # or your favorite editor
