@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
+# encoding: UTF-8
 # vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 # lib/iana/port.rb
-# coding:utf-8
 
 module IANA
   module Port
@@ -41,7 +41,7 @@ module IANA
           end
 
           line.strip!
-          tokens = line.split(/[\s\t]+/)
+          tokens = line.split(/[\s]+/)
 
           # if first token is a port/proto pair then the port is unnamed
           if tokens[0] =~ /\//

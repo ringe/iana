@@ -15,7 +15,7 @@ require 'rake/testtask'
 CLEAN.include('cache/*', 'Manifest', 'iana.gemspec')
 CLOBBER.include('cache')
 
-Echoe.new('iana', '0.0.9') do |p|
+Echoe.new('iana', '1.1.0') do |p|
   p.description    = "Process flat files from IANA"
   p.url            = "https://github.com/yesmar/iana"
   p.author         = "Ramsey Dow"

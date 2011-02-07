@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
+# encoding: UTF-8
 # vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 # lib/iana.rb
-# coding:utf-8
 
 module IANA
   NAME = 'iana'
-  MAJOR_VERSION = 0
-  MINOR_VERSION = 0
-  PATCHLEVEL = 9
+  MAJOR_VERSION = 1
+  MINOR_VERSION = 1
+  PATCHLEVEL = 0
   LIBPATH = File.expand_path(File.dirname(__FILE__)) + File::SEPARATOR
   PATH = File.dirname(LIBPATH) + File::SEPARATOR
   COPYRIGHT = 'Copyright 2008-2011, Ramsey Dow. All rights reserved.'

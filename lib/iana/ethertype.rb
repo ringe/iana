@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
+# encoding: UTF-8
 # vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 # lib/iana/ethertype.rb
-# coding:utf-8
 
 module IANA
   module EtherType

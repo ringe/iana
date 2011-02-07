@@ -1,70 +1,61 @@
 #!/usr/bin/env ruby
+# encoding: UTF-8
 # vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 # lib/iana/protocol.rb
-# coding:utf-8
+
+# rubygems
+require 'nokogiri'
 
 module IANA
   module Protocol
-    Protocol = Struct.new('PROTOCOL', :keyword, :description, :references)
+    Protocol = Struct.new('PROTOCOL', :name, :description, :references)
 
-    # load IANA protocols list from flat file:
-    # http://www.iana.org/assignments/protocol-numbers
+    # load IANA protocols list from XML file:
+    # http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml
     def self.load(pathname)
       raise ArgumentError, 'nil pathname' if pathname.nil?
       raise ArgumentError, 'invalid pathname class' if pathname.class != String
       raise ArgumentError, 'empty pathname' if pathname.empty?
-
-      # TODO: better error checking for files with incorrect content
 
       protocols = {}
       updated = nil
 
       begin
         f = File.new(pathname, 'r')
-        while (line = f.gets)
-          line.chomp!
-
-          # extract update stamp
-          if line =~ /^\(last updated (\d{4}-\d{2}-\d{2})\)\s*$/
-            updated = $1
-            next
+        doc = Nokogiri::XML(f)
+        updated = doc.css('registry/updated').text
+        doc.css('registry/registry/record').each do |r|
+          # range
+          value = r.css('value').text
+          if value =~ /-/ then
+            low,high = value.split('-').map(&:to_i)
+          else
+            low = value.to_i
+            high = low
           end
 
-          # match spaces d[dd][-ddd] spaces
-          if line =~ /^\s+\d{1,3}([\-]{1}\d{3})?\s+/
-            line.strip!
-            line.gsub!(/\t/, ' ')
-            line.gsub!(/\s{2,}/, '|')
-            data = line.split('|')
-            raw_decimal = data[0]
+          # name
+          name = r.css('name').text
+          name = nil if !name.nil? && name.empty?
 
-            if raw_decimal =~ /\-/
-              first,second = raw_decimal.split(' ')
-              raw_low,raw_high = first.split('-')
-              low = raw_low.to_i
-              high = raw_high.to_i
-              low.upto(high) do |i|
-                p = Protocol.new
-                p.keyword = '<unassigned>'
-                p.description = '<unassigned>'
-                p.references = '[IANA]'
-                protocols[i] = p
-              end
-            else
-              p = Protocol.new
-              decimal = raw_decimal.to_i
-              case data.size
-                when 3
-                  p.keyword = nil
-                  p.description = data[1]
-                  p.references = data[2]
-                else
-                  p.keyword = data[1]
-                  p.description = data[2]
-                  p.references = data[3]
-              end
-              protocols[decimal] = p
+          # description
+          description = r.css('description').text
+          description = nil if !description.nil? && description.empty?
+
+          # references
+          xref = []
+          r.css('xref').each do |x|
+            data = x['data']
+            xref << data if !data.nil? && !data.empty?
+          end
+
+          if low == high then
+            protocols[low] = Protocol.new(name, description, xref)
+          else
+            # create an entry for each range element
+            (high-low+1).times do |i|
+              protocols[low+i] = Protocol.new(name, description, xref)
             end
           end
         end

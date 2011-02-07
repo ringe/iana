@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
+# encoding: UTF-8
 # vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 # examples/protocols.rb
-# coding:utf-8
 
 require 'pathname'
 dir = Pathname.new(File.expand_path(__FILE__)).realpath
@@ -24,9 +24,13 @@ end
 
 puts "#{IANA_PROTO_UPDATED} => #{IANA_PROTO.size} entries"
 
-# lookup protocol 50
-result = IANA_PROTO[50]
-puts "protocol 50 => #{result.keyword} \"#{result.description}\" " \
-  "#{result.references}"
+# lookup protocol 22
+result = IANA_PROTO[22]
+print "protocol 22 => #{result.name} \"#{result.description}\""
+if !result.references.nil? && !result.references.empty? then
+  puts " #{result.references}"
+else
+  puts
+end
 
 exit 0
