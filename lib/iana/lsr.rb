@@ -1,5 +1,11 @@
 #!/usr/bin/env ruby
 
+# NOTE
+# RFC 4646 described below has been obseleted by RFC5646. Tests still run OK
+# but I have no idea (yet) what this new RFC has changed in terms of the LSR
+# file format or langugae tags generally.
+# See http://tools.ietf.org/html/rfc5646 (particularly section 8).
+# 2011-04-18
 module IANA
   # Get the Language Subtag Registry data from the IANA site or a text file
   # and load it into an array of hashes for further processing.
