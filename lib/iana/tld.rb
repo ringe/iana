@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
+# encoding: UTF-8
+# vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
-# tld.rb
-# yesmar@speakeasy.net
+# lib/tld.rb
 
 module IANA
   module TLD
@@ -22,7 +23,7 @@ module IANA
         while (line = f.gets)
           line.chomp!
     
-          if line =~ /^# Version \d{10}, Last Updated ([\w\W\d\s]*)$/
+          if line =~ /^# Version \d{10}, Last Updated ([\w:\s]*)$/
             # extract update stamp
             updated = $1
             version,gunk= line.split(',')
