@@ -6,10 +6,10 @@ require 'iana/version'
 Gem::Specification.new do |spec|
   spec.name          = "iana-data"
   spec.version       = Iana::VERSION
-  spec.authors       = %w{Runar Ingebrigtsen, Ramsey Dow}
+  spec.authors       = ["Runar Ingebrigtsen", "Ramsey Dow"]
   spec.email         = %w{runar@rin.no, yesmar@gmail.com}
 
-  spec.summary       = %q{Look up official IANA data}
+  spec.summary       = %q{Look up official IANA data, replacement for iana gem}
   spec.homepage      = "http://github.com/ringe/iana"
   spec.license       = "MIT"
 
