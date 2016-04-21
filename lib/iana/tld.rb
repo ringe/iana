@@ -16,7 +16,7 @@ module IANA
 
     # is specified tld a valid IANA Top Level Domain?
     def self.valid?(tld)
-      iana_list.include?(tld.to_s.upcase)
+      iana_list.include?(tld.to_s.upcase.sub('.',''))
     end
 
     # is specified domain name a TLD?

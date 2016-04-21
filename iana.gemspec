@@ -29,7 +29,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency 'yard', '~> 0.8', '>= 0.8.7'
+  spec.add_development_dependency 'yard', '~> 0.8'
 
   spec.add_dependency "open-uri-cached", "= 0.0.5"
+  spec.add_dependency "nokogiri", '~> 1.6'
 end

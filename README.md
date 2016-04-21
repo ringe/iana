@@ -27,10 +27,27 @@ I grab these files with with curl (but you can use wget or whatever if you
 don't use curl):
 
     curl -L -O http://www.iana.org/assignments/port-numbers
-    curl -L -O http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml
     curl -L -O http://www.iana.org/assignments/ethernet-numbers
 
-TLD data is downloaded automatically using open-uri, so no need to fetch yourself.
+Currently working to replace curl with open-uri, so for TLD and Protocol you
+simply do
+
+```ruby
+require 'iana'
+
+IANA::TLD.valid?("com")
+=> true
+IANA::TLD.valid?(".com")
+=> true
+IANA::TLD.valid?("isthisforreal")
+=> false
+
+prot = IANA::Protocol[25]
+=> #<IANA::Protocol:0x00563e8bdd18a8 @protocol=25, @name="LEAF-1", @description="Leaf-1", @references=["Barry_Boehm"]>
+prot.number
+=> 25
+
+```
 
 ## Examples
 When you run the example programs, do it like so:
