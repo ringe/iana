@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    iana (1.1.2)
-      open-uri-cached (~> 0.0.5)
+    iana-data (1.1.2)
+      open-uri-cached (= 0.0.5)
 
 GEM
   remote: https://rubygems.org/
@@ -30,10 +30,10 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.11)
-  iana!
+  iana-data!
   rake (~> 10.0)
   rspec (~> 3.0)
-  yard (~> 0.8.7)
+  yard (~> 0.8, >= 0.8.7)
 
 BUNDLED WITH
    1.11.2

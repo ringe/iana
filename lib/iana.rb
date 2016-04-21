@@ -3,7 +3,6 @@
 # vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 # lib/iana.rb
-
 module IANA
 end # IANA
 

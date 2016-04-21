@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'iana/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "iana"
+  spec.name          = "iana-data"
   spec.version       = Iana::VERSION
   spec.authors       = %w{Runar Ingebrigtsen, Ramsey Dow}
   spec.email         = %w{runar@rin.no, yesmar@gmail.com}
