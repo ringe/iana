@@ -1,5 +1,5 @@
 ## What
-IANA Ruby module version 1.1.2
+IANA Ruby module version 1.1.3
 
 Look up TCP/IP port numbers, protocols, top-level domains, et al.
 
@@ -8,7 +8,11 @@ available to your programs.
 
 ## Install
 
-    gem 'iana', github: 'ringe/iana'
+    gem install iana-data
+
+In your Gemfile
+
+    gem 'iana-data'
 
 ## Usage
 
