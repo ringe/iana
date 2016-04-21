@@ -3,6 +3,7 @@
 # vim: expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
 # examples/tlds.rb
+require 'iana'
 
 # is com a TLD?
 puts "com is a TLD? => #{IANA::TLD.tld?('com')}"
