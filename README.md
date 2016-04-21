@@ -1,5 +1,6 @@
 ## What
-IANA Ruby module version 1.1.3
+IANA Ruby module [![Gem Version](https://badge.fury.io/rb/iana-data.svg)](https://badge.fury.io/rb/iana-data)
+[![Code Climate](https://codeclimate.com/github/ringe/iana/badges/gpa.svg)](https://codeclimate.com/github/ringe/iana)
 
 Look up TCP/IP port numbers, protocols, top-level domains, et al.
 
