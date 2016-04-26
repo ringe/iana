@@ -35,12 +35,9 @@ module IANA
         doc = Nokogiri::XML(source)
         doc.css('registry/registry/record').each do |r|
           value = r.css('value').text
-          if value =~ /-/ then
-            low,high = value.split('-').map(&:to_i)
-          else
-            low = value.to_i
-            high = low
-          end
+
+          low,high = value.split('-').map(&:to_i)
+          high ||= low
 
           name = r.css('name').text
           name = nil if !name.nil? && name.empty?
@@ -49,19 +46,11 @@ module IANA
           description = nil if !description.nil? && description.empty?
 
           # references
-          xref = []
-          r.css('xref').each do |x|
-            data = x['data']
-            xref << data if !data.nil? && !data.empty?
-          end
+          xref = r.css('xref').collect {|ref| ref['data'] }.compact
 
-          if low == high then
-            protocols[low] = Protocol.new(low, name, description, xref)
-          else
-            # create an entry for each range element
-            (high-low+1).times do |i|
-              protocols[low+i] = Protocol.new(low+i, name, description, xref)
-            end
+          # create an entry for each range element
+          (high-low+1).times do |i|
+            protocols[low+i] = Protocol.new(low+i, name, description, xref)
           end
         end
       end
