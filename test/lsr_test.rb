@@ -43,8 +43,8 @@ class TestLanguageSubtagRegistry < Test::Unit::TestCase
     assert_raise(ArgumentError) { text = @LSR::dump(5) }
   end
 
+  # test loading from a dump; verify same data
   def test_d_redo
-    # TODO: test loading from a dump; verify same data
   end
 
   ################################################

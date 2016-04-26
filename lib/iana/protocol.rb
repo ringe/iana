@@ -9,6 +9,8 @@ require 'nokogiri'
 
 module IANA
   class Protocol
+    SOURCE = "http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml"
+
     attr_reader :protocol, :name, :description, :references
 
     def initialize(protocol, name, description, xref)
@@ -21,19 +23,17 @@ module IANA
     def description; @description; end
     def references; @references; end
 
+    def self.source
+      @source ||= open(SOURCE).read
+    end
+
     # Download IANA protocols list in XML format, return list
     # http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml
     def self.iana_list
-      source = open("http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml").read
-
       protocols = {}
-      updated = nil
-
       begin
         doc = Nokogiri::XML(source)
-        updated = doc.css('registry/updated').text
         doc.css('registry/registry/record').each do |r|
-          # range
           value = r.css('value').text
           if value =~ /-/ then
             low,high = value.split('-').map(&:to_i)
@@ -42,11 +42,9 @@ module IANA
             high = low
           end
 
-          # name
           name = r.css('name').text
           name = nil if !name.nil? && name.empty?
 
-          # description
           description = r.css('description').text
           description = nil if !description.nil? && description.empty?
 
@@ -67,7 +65,6 @@ module IANA
           end
         end
       end
-
       return protocols
     end
 

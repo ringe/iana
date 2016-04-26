@@ -6,3 +6,5 @@ data
 doc
 Manifest
 pkg
+iana-data*.gem
+iana.tmproj

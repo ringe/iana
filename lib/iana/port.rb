@@ -6,6 +6,8 @@
 
 module IANA
   class Port
+    SOURCE = "http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv"
+
     attr_reader :port, :keyword, :protocol, :description
 
     def initialize(port, keyword, protocol, description)
@@ -18,17 +20,16 @@ module IANA
     def protocol; @protocol; end
     def description; @description; end
 
+    def self.source
+      @source ||= open(SOURCE).read
+    end
+
     # Download IANA ports list in XML format, return list
     # http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xml
     def self.iana_list
-      source = open("http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv").
-        read
-
       # concatenate multiline strings, then split on newline
       lines = source.gsub(/(?<!\r)\n/, ' ').split(/\r\n/)
-
       ports = {}
-
       begin
         while (line = lines.shift)
           # skip lines which do not contain the ,proto, pattern
