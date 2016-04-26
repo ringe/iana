@@ -12,6 +12,5 @@ require 'open-uri/cached'
 require 'iana/port'
 require 'iana/protocol'
 require 'iana/tld'
-require 'iana/lsr'
 
 raise RuntimeError, 'This library is for require only' if $0 == __FILE__
